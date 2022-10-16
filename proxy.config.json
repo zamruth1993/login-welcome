@@ -1,0 +1,10 @@
+{
+    "/demo-occamlab/upload-test": {
+      "target": "https://api.occamlab.com.sg/demo-occamlab/upload-test",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite" : {
+        "^/upload-test": ""
+      }
+    }
+  }

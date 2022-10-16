@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/shared/slim/slim.css"
             ],
             "scripts": []
           },
@@ -72,7 +73,8 @@
               "browserTarget": "welcome-profile:build:production"
             },
             "development": {
-              "browserTarget": "welcome-profile:build:development"
+              "browserTarget": "welcome-profile:build:development",
+              "proxyConfig": "./proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
@@ -93,12 +95,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/images"
             ],
             "styles": [
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.js"
+            ]
           }
         }
       }

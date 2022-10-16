@@ -1,0 +1,75 @@
+
+<div *ngIf="isLoading">
+    <div class="d-flex justify-content-center">
+        <!-- <div class="spinner-border" role="status">
+          <span class="">Loading...</span>
+        </div> -->
+        <button class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading..
+          </button>
+      </div>
+
+      
+</div>
+<!-- <app-profile-page [authTokenValue] = "authToken"></app-profile-page> -->
+<app-header *ngIf="showWelcome && !isLoading"></app-header>
+    <div class="container" *ngIf="showWelcome && !isLoading" >
+
+        <div class="row welcome-content">
+            <div class="border-left row">
+                <div class="col-lg-6 ">
+                    <h1 class="margin-bottom-32 padding-left-35">Welcome</h1>
+
+                <h2 class="margin-bottom-32 padding-left-35">Zheng Jie Ng,</h2>
+
+                <p class="margin-bottom-32 width-434 padding-left-35">To commemorate Occam Labs’s 400th Anniversary, we are
+                    convening leaders of our most important partners,
+                    investee companies and counterparties globally at a special
+                    edition of The Occam Conference.</p>
+
+                <p class="width-434 padding-left-35">With the theme, Towards a Ecological Future, the forum will
+                    seek perspectives from global thought leaders on the
+                    pertinent
+                    sustainability trends and initiatives that are needed to
+                    build a more resilient and equitable future.</p>
+                </div>
+                <div class="col-lg-6 welcome-flower">
+                    <img class="opacity-25"
+                    src="../../assets/images/welcome-flower.png">
+                </div>
+            </div>
+            
+
+            <!-- <div class="col-lg-6">
+                <h1>Welcome</h1>
+
+                <h2>Zheng Jie Ng,</h2>
+
+                <p>To commemorate Occam Labs’s 400th Anniversary, we are
+                    convening leaders of our most important partners,
+                    investee companies and counterparties globally at a special
+                    edition of The Occam Conference.</p>
+
+                <p>With the theme, Towards a Ecological Future, the forum will
+                    seek perspectives from global thought leaders on the
+                    pertinent
+                    sustainability trends and initiatives that are needed to
+                    build a more resilient and equitable future.</p>
+            </div>
+            <div class="col-lg-6 welcome-flower">
+                <div>
+                <img class="opacity-25"
+                    src="../../assets/images/welcome-flower.png">
+                </div>
+                <div class="border-right-min-width"></div>
+                <div class="border-right-width-7"></div>
+            </div> -->
+        </div>
+
+    </div>
+<app-footer *ngIf="showWelcome && !isLoading"></app-footer>
+
+   
+
+

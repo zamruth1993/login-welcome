@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+	font-family: suisseintl-regular_0;
+	src: url('../src/assets/fonts/suisseintl-regular_0.otf') format('opentype'); 
+}
+@font-face {
+    font-family: Canela-Medium;
+    src: url('../src/assets/fonts/Canela-Medium.ttf');
+}
+h1 {
+	font-family: Canela-Medium;
+}
+body,p,h2,h3,h4,h5,h6 {
+    font-family: suisseintl-regular_0 !important;
+}
