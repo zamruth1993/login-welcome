@@ -95,6 +95,7 @@ export class ProfilePageComponent implements OnInit {
   */
   saveImage() {
     this.file = this.imagetopass;
+    this.isLoading = true;
     this.loginUpload.profileImage(this.file, this.authToken).subscribe((res) => {
       this.isLoading = true;
       if (res) {
