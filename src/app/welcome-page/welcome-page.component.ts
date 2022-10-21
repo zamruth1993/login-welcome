@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginUploadServiceService } from '../services/login-upload-service.service';
 
 @Component({
@@ -7,24 +8,20 @@ import { LoginUploadServiceService } from '../services/login-upload-service.serv
   styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
-  showWelcome: boolean = false;
+
   isLoading: boolean = true;
-  loginResponse: any;
-  authToken: any;
-  constructor(private loginUpload:LoginUploadServiceService) { }
+  constructor(private loginUpload: LoginUploadServiceService, private router:Router) { }
 
   ngOnInit(): void {
-    this.loginUpload.loginTest().subscribe(res =>{
-      if(res) {
-        this.showWelcomePage();
-        this.loginResponse  = res;
+    // to susbcribe the value from the emitted observable from login-upload-service.ts
+    this.loginUpload.authToken.subscribe((res: any) => {
+      // if value is present then loading is made false . Else redirected to login page
+      if (res) {
         this.isLoading = false;
-        this.authToken = this.loginResponse.auth_token;
+      } else {
+        this.isLoading = true;
+        this.router.navigateByUrl('')
       }
-     })
-  }
-
-  showWelcomePage() {
-    this.showWelcome = true;
+    })
   }
 }

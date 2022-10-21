@@ -7,12 +7,11 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SlimModule } from '../app/shared/slim/slim.angular.module';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms'
 import { CommonModule } from '@angular/common';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +20,6 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    FileUploadComponent
   ],
   imports: [
     BrowserModule,

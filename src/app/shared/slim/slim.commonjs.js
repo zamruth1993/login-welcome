@@ -8450,7 +8450,7 @@ var Slim = function () {
 
                 // label HTML to show inside drop area
                 label: '<p>Drop your image here</p>',
-                labelLoading: '<p>Loading image...</p>',
+                labelLoading: '<p>Uploading ..</p>',
 
                 // error messages
                 statusFileType: '<p>Invalid file type, expects: $0.</p>',

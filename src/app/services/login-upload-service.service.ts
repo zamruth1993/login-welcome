@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SafeUrl } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,61 +8,38 @@ import { Observable } from 'rxjs';
 export class LoginUploadServiceService {
 
   constructor(private http: HttpClient) { }
-  
+
+  /* BehaviourSubject -> to return the current value on subscription
+     authSource -> a variable to handle this data stream as an observable that will be used by the components
+     setAuthToken -> a function to call the next() function to change the authToken value.
+  */
+  private authSource = new BehaviorSubject('');
+  authToken = this.authSource.asObservable()
+
+  setAuthToken(authToken: any) {
+    // if (name !== null || name !== '' || name !== undefined)
+      this.authSource.next(authToken);
+  }
+  // loginTest api to pass the details and get the response
   loginTest() {
     let bodyData = {
       "email": "sample-user@test.com",
       "password": "sample-password"
     }
     const url = 'https://api.occamlab.com.sg/demo-occamlab/login-test';
-  return this.http.post(url,bodyData)
+    return this.http.post(url, bodyData)
   }
 
-  profileImage(blob_auth_response:any) {
-  
+  // to upload the image with authToken as the authorization header
+  profileImage(urlImage: any, auth: string) {
     const url = 'https://api.occamlab.com.sg/demo-occamlab/upload-test';
-    // let bodyData = {
-    //    'imageBlob' : imageUrl.changingThisBreaksApplicationSecurity,
-    //    'authToken' : token
-    // }
     const header = {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin':  'http://localhost:4200',
-      'Access-Control-Allow-Credentials': 'false',
-      'WWW-Authenticate': 'Basic realm="Access to the staging site"'
+      'Content-Type': 'image/jpeg',
+      'Authorization': auth
     }
-    return this.http.post(url,{blob_auth_response}, {headers:header})
-    // return this.http.post(url,imageBlob, {headers:header})
+    const formData = new FormData();
+    formData.append("file", urlImage, urlImage.name);
+    return this.http.post(url, urlImage, { headers: header })
   }
-
- // Returns an observable
- upload(file:any):Observable<any> {
-   // API url
-   let baseApiUrl = "https://file.io"
-  const url = 'https://api.occamlab.com.sg/demo-occamlab/upload-test';
-  // Create form data
-  const formData = new FormData(); 
-    
-  // Store form name as "file" with file data
-  formData.append("file", file, file.name);
-  // Make http post request over api
-  // with formData as req
-  return this.http.post(baseApiUrl,formData)
 }
-
-// Returns an observable
-uploadProfilePic(file:any,authentication:any):Observable<any> {
-  // API url
- const url = 'https://api.occamlab.com.sg/demo-occamlab/upload-test';
- // Create form data
- const formData = new FormData(); 
-   
- // Store form name as "file" with file data
- formData.append("file", file, file.name);
- formData.append("authUrl", authentication)
- // Make http post request over api
- // with formData as req
- return this.http.post(url,formData)
-}
-  }
 

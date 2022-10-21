@@ -5,16 +5,25 @@ $background: #f2f2f2;
 $padding-left: 0rem;
 $margin-bottom-32: 32px;
 $padding-left-35: 35px;
-$width-434: 474px;
+$width-474: 474px;
+$margin-bottom-108: 108px;
+
+.margin-bottom-108 {
+    margin-bottom: $margin-bottom-108;
+}
+
 .padding-left-35 {
     padding-left: $padding-left-35;
 }
+
 .padding-left-0rem {
     padding-left: $padding-left !important;
 }
-.width-434 {
-    width: $width-434;
+
+.width-474 {
+    width: $width-474;
 }
+
 .margin-bottom-32 {
     margin-bottom: $margin-bottom-32;
 }
@@ -27,9 +36,11 @@ $width-434: 474px;
     border-left: 19px solid #1c3c34;
     border-right: 19px solid #1c3c34;
     fill: #1c3c34;
-.border-left {
-    border-right: 7px solid #1c3c34;
-}
+
+    .border-left {
+        border-right: 7px solid #1c3c34;
+    }
+
     .welcome-flower {
         .opacity-25 {
             opacity: 0.25;
@@ -39,6 +50,7 @@ $width-434: 474px;
 
         border-left: 7px solid #1c3c34;
         border-right: 4px solid #1c3c34;
+
         .border-right-min-width {
             border-left: 4px solid #1c3c34;
             // float: right;
@@ -56,10 +68,73 @@ $width-434: 474px;
 }
 
 @media screen and (max-width:767px) {
-    .width-434 {
+    .row>* {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .border-left {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    .width-474 {
         width: auto;
     }
+
     .opacity-25 {
         height: auto !important;
+        width: 100%;
+    }
+
+    .welcome-content {
+        // border-bottom: 5px solid #1c3c34;
+        border-right: 0px;
+        border-left: 0px;
+        margin: 0px;
+
+        .welcome-flower {
+            border-top: 13px solid #1c3c34;
+            border-bottom: 5px solid #1c3c34;
+            border-left: 0px;
+            border-right: 0px;
+            margin-bottom: 49px;
+        }
+    }
+
+    .border-left {
+        // border-bottom: 3px solid #1c3c34;
+        margin-bottom: 10px;
+        border-right: 0px !important;
+    }
+
+    .border-bottom-mobile {
+        border-bottom: 5px solid #1c3c34;
+    }
+
+    .final-border-bottom {
+        width: auto;
+        height: 15px;
+        margin-top: 15px;
+        border-bottom: 13px solid #1c3c34;
+    }
+
+    .mobile-border-bottom-3 {
+        border-bottom: 3px solid #1c3c34;
+    }
+
+    .break {
+        width: 100%;
+        margin: 15px 0px 40px 0px;
+        border-bottom: 5px solid #1c3c34;
+        // transform: translate(12px, 0px);
+    }
+
+    .break-bottom {
+        width: 100%;
+        // transform: translate(12px, 0px);
+        border-bottom: 13px solid #1c3c34;
     }
 }

@@ -1,5 +1,6 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { LoginUploadServiceService } from '../services/login-upload-service.service';
 
 @Component({
@@ -7,19 +8,25 @@ import { LoginUploadServiceService } from '../services/login-upload-service.serv
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor(private loginUpload:LoginUploadServiceService) { }
- 
-  ngOnInit(): void {
+  loginResponse: any;
+  isLoading: boolean = false;
+
+  constructor(private loginUpload: LoginUploadServiceService, private router: Router) { }
+
+  login() {
+    this.isLoading = true;
+    this.loginUpload.loginTest().subscribe(res => {
+      if (res) {
+        this.isLoading = false;
+        this.loginResponse = res;
+        this.loginUpload.setAuthToken(this.loginResponse.auth_token); // to set the authToken value in the service file 
+        this.router.navigateByUrl('/welcome')
+      } else {
+        this.isLoading = false;
+        this.loginUpload.setAuthToken(null);
+      }
+    })
   }
-
-  callApi() {
-   this.loginUpload.loginTest().subscribe(res =>{
-    console.log('res', res);
-    if(res) {
-      let showPage = true;
-    }
-   })
-}
 }
