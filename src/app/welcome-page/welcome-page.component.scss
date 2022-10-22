@@ -1,13 +1,10 @@
-$white : #fff;
 $text-transform: uppercase;
-$font-family: Canela-Medium;
-$background: #f2f2f2;
 $padding-left: 0rem;
 $margin-bottom-32: 32px;
 $padding-left-35: 35px;
 $width-474: 474px;
 $margin-bottom-108: 108px;
-
+$color-1c3c34: #1c3c34;
 .margin-bottom-108 {
     margin-bottom: $margin-bottom-108;
 }
@@ -29,16 +26,12 @@ $margin-bottom-108: 108px;
 }
 
 .welcome-content {
-    p {
-        // font-family: $font-family !important;
-    }
-
-    border-left: 19px solid #1c3c34;
-    border-right: 19px solid #1c3c34;
-    fill: #1c3c34;
+    border-left: 19px solid $color-1c3c34;
+    border-right: 19px solid $color-1c3c34;
+    fill: $color-1c3c34;
 
     .border-left {
-        border-right: 7px solid #1c3c34;
+        border-right: 7px solid $color-1c3c34;
     }
 
     .welcome-flower {
@@ -48,18 +41,18 @@ $margin-bottom-108: 108px;
             height: 390px;
         }
 
-        border-left: 7px solid #1c3c34;
-        border-right: 4px solid #1c3c34;
+        border-left: 7px solid $color-1c3c34;
+        border-right: 4px solid $color-1c3c34;
 
         .border-right-min-width {
-            border-left: 4px solid #1c3c34;
+            border-left: 4px solid $color-1c3c34;
             // float: right;
             // height: 323px;
             transform: translate(-10px, 0px);
         }
 
         .border-right-width-7 {
-            border-left: 7px solid #1c3c34;
+            border-left: 7px solid $color-1c3c34;
             float: right;
             height: 323px;
             transform: translate(10px, 0px);
@@ -90,14 +83,13 @@ $margin-bottom-108: 108px;
     }
 
     .welcome-content {
-        // border-bottom: 5px solid #1c3c34;
         border-right: 0px;
         border-left: 0px;
         margin: 0px;
 
         .welcome-flower {
-            border-top: 13px solid #1c3c34;
-            border-bottom: 5px solid #1c3c34;
+            border-top: 13px solid $color-1c3c34;
+            border-bottom: 5px solid $color-1c3c34;
             border-left: 0px;
             border-right: 0px;
             margin-bottom: 49px;
@@ -105,36 +97,33 @@ $margin-bottom-108: 108px;
     }
 
     .border-left {
-        // border-bottom: 3px solid #1c3c34;
         margin-bottom: 10px;
         border-right: 0px !important;
     }
 
     .border-bottom-mobile {
-        border-bottom: 5px solid #1c3c34;
+        border-bottom: 5px solid $color-1c3c34;
     }
 
     .final-border-bottom {
         width: auto;
         height: 15px;
         margin-top: 15px;
-        border-bottom: 13px solid #1c3c34;
+        border-bottom: 13px solid $color-1c3c34;
     }
 
     .mobile-border-bottom-3 {
-        border-bottom: 3px solid #1c3c34;
+        border-bottom: 3px solid $color-1c3c34;
     }
 
     .break {
         width: 100%;
         margin: 15px 0px 40px 0px;
-        border-bottom: 5px solid #1c3c34;
-        // transform: translate(12px, 0px);
+        border-bottom: 5px solid $color-1c3c34;
     }
 
     .break-bottom {
         width: 100%;
-        // transform: translate(12px, 0px);
-        border-bottom: 13px solid #1c3c34;
+        border-bottom: 13px solid $color-1c3c34;
     }
 }

@@ -1,3 +1,4 @@
+// common classes and styles used in profile
 $margin-top-46 : 46px;
 $margin-top-21 : 21px;
 $margin-bottom-6 : 6px;
@@ -9,6 +10,21 @@ $h2-font-size-16: 16px;
 $font-color-3c3c40: #3c3c40;
 $font-color-1c3c34: #1c3c34;
 $margin-bottom-48: 48px;
+$black-color: #000000;
+$margin-bottom-14: 14px;
+$padding-top-8: 8px;
+
+.padding-top-8 {
+  padding-top: $padding-top-8
+}
+
+.margin-bottom-14 {
+  margin-bottom: 14px;
+}
+
+.color-black {
+  color: $black-color;
+}
 
 .slim-center {
   display: inline-block;
@@ -79,11 +95,6 @@ div.img-circle {
   color: $font-color;
 }
 
-.styles-profile {
-  position: absolute;
-  width: 100%;
-}
-
 .font-color-3c3c40 {
   color: $font-color-3c3c40;
   opacity: 0.8;
@@ -104,6 +115,7 @@ div.img-circle {
       margin-top: 46px;
       margin-bottom: 6px;
     }
+
     h3,
     h5 {
       font-family: suisseintl-regular_0;
@@ -136,6 +148,8 @@ p {
   text-decoration: none;
   padding-left: 0rem;
 }
+
+// material-switch customisations
 
 .material-switch>input[type="checkbox"] {
   display: none;
@@ -183,22 +197,7 @@ p {
   left: 24px;
 }
 
-@media screen and (max-width:767px) {
-  .margin-bottom-48 {
-    margin-bottom: 70px;
-  }
-
-  .width-30 {
-    width: 100% !important;
-  }
-}
-
-@media screen and (min-width:768px) and (max-width:1023px) {
-  .width-30 {
-    width: 55% !important;
-  }
-}
-
+// uploading styles
 .uploading-bg {
   opacity: 0.8;
   width: 200px;
@@ -216,8 +215,26 @@ p {
   transform: translate(70px, 90px);
   color: white !important;
   position: absolute;
-
 }
+
+// for tablet width
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .width-30 {
+    width: 55% !important;
+  }
+}
+
+// mobile width and margin-bottom styles
+@media screen and (max-width:767px) {
+  .margin-bottom-48 {
+    margin-bottom: 70px;
+  }
+
+  .width-30 {
+    width: 100% !important;
+  }
+}
+
 
 #loading {
   position: absolute;
@@ -229,7 +246,7 @@ p {
   background: rgba(0, 0, 0, 0.7019607843137254);
 }
 
-
+// dots-loader
 
 .jumping-dots-loader {
 
@@ -282,9 +299,11 @@ p {
   }
 }
 
+// for showing file error and success
 .maximum-file-size {
-  color:red;
+  color: red;
 }
+
 .success-uploaded {
   color: green;
 }
