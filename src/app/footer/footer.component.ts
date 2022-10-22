@@ -28,6 +28,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('')
   }
 
+  // subscription is unsubscribed to avoid memory leaks
   ngOnDestroy() {
     this.subscription.unsubscribe()
   }
