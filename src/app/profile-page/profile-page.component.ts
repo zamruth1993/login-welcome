@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginUploadServiceService } from '../services/login-upload-service.service';
+import { profileResponse } from '../shared/interface/profileResponse';
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -31,7 +32,7 @@ export class ProfilePageComponent implements OnInit {
   
   ngOnInit(): void {
     // to susbcribe the value from the emitted observable from login-upload-service.ts
-    this.loginUpload.authToken.subscribe((res: any) => {
+    this.loginUpload.authToken.subscribe((res: string) => {
       // if value is present then loading is made false and authToken value is stored which is to be passed while uploading the image.
       //  Else redirected to login page
       if (res) {
@@ -96,7 +97,7 @@ export class ProfilePageComponent implements OnInit {
   saveImage() {
     this.file = this.imagetopass;
     this.isLoading = true;
-    this.loginUpload.profileImage(this.file, this.authToken).subscribe((res) => {
+    this.loginUpload.profileImage(this.file, this.authToken).subscribe((res: profileResponse) => {
       this.isLoading = true;
       if (res) {
           this.uploadApiResponse = res;

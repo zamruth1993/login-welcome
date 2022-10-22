@@ -14,7 +14,7 @@ constructor(private loginUpload: LoginUploadServiceService) {}
 
 ngOnInit(): void {
   
-  this.loginUpload.authToken.subscribe((res: any) => {
+  this.loginUpload.authToken.subscribe((res: string) => {
     if (res === null || res === '' || res === "") {
       this.isLoading = true;
     } else {

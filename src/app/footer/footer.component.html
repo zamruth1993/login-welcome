@@ -20,8 +20,8 @@
                 </ul>
             </div>
             <div class="right-footer-link">
-                <p class="padding-left-30">Connect with us</p>
-                <ul class="social-icons">
+                <p class="padding-left-30 $color-676767">Connect with us</p>
+                <ul class="social-icons padding-left-0rem">
                     <li><span class="social-icon social-youtube"><i
                                 class="fa fa-youtube-play"></i></span></li>
                     <li><span class="social-icon social-linkedin"><i
@@ -42,8 +42,8 @@
     </div>
     </div>
   </div>
-      <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!--Menu  Modal -->
+<div class="modal fade " id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -51,42 +51,40 @@
       </div>
       <div class="modal-body">
         <p class="text-align-center margin-bottom-0 font-size-26">MENU</p>
-        <ul class="navbar-nav ul-style-type text-align-center">
+        <div style="text-align: center;">
+        <ul class="navbar-nav ul-style-type text-align-center align-modal-menu">
             <div class="dropdown">
-                <a class="nav-link active dropdown-toggle padding-top-51 padding-bottom-18 font-size-18" href="#" role="button" id="dropdownMenuLink"
+                <a class="nav-link active dropdown-toggle padding-top-51 padding-bottom-18 font-size-18 padding-left-70"  role="button" id="dropdownMenuLink"
                 data-bs-toggle="dropdown" aria-expanded="false">Forum</a>
                 <ul class="dropdown-menu"
                 aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another
+                <li><a class="dropdown-item">Action</a></li>
+                <li><a class="dropdown-item" >Another
                         action</a></li>
-                <li><a class="dropdown-item" href="#">Something
-                        else
-                        here</a></li>
             </ul>
         </div>
           
             
             <div class="dropdown">
-                <a class="nav-link dropdown-toggle padding-top-12 padding-bottom-18 font-size-18" href="#" role="button" id="dropdownMenuLink"
+                <a class="nav-link dropdown-toggle padding-top-12 padding-bottom-18 font-size-18 padding-left-70"  role="button" id="dropdownMenuLink"
                 data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                 <ul class="dropdown-menu"
                 aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item font-size-18" href="#">Action</a></li>
-                <li><a class="dropdown-item font-size-18" href="#">Another
+                <li><a class="dropdown-item font-size-18" >Action</a></li>
+                <li><a class="dropdown-item font-size-18" >Another
                         action</a></li>
-                <li><a class="dropdown-item font-size-18" href="#">Something
-                        else
-                        here</a></li>
+              
             </ul>
         </div>
             <li class="nav-item">
-                <a class="nav-link padding-top-12 padding-bottom-18" href="#">Help</a>
+                <a class="nav-link padding-top-12 padding-bottom-18 padding-left-70">Help</a>
             </li>
+            
             <li class="nav-item">
-                <a class="nav-link padding-top-12 padding-bottom-18" href="#">Logout</a>
+                <a class="nav-link padding-top-12 padding-bottom-18 padding-left-70" data-bs-dismiss="modal" (click)="logout()">Logout</a>
             </li>
         </ul>
+    </div>
 
         <div class="padding-top-134">
             <p class="text-align-center font-size-14">Connect with us</p>
@@ -116,34 +114,35 @@
     </div>
   </div>
 </div>
+    <!-- NavBar for footer -->
       <nav class="navbar  mobile-bottom-nav d-block d-sm-block d-md-none" *ngIf="!isLoading">
         <div class="container-fluid">
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
+            <div class="mobile-bottom-nav-item" [routerLink]="['/welcome']">
+                <a class="mobile-bottom-nav-item-content">
                    <img src="../../assets/images/home-icon.svg" type="image/svg" class="width-height-22">
                     Home
-                </div>		
+                </a>		
             </div>
-            <div class="mobile-bottom-nav__item">		
-                <div class="mobile-bottom-nav__item-content">
+            <div class="mobile-bottom-nav-item">		
+                <div class="mobile-bottom-nav-item-content">
                     <img src="../../assets/images/calendar-icon.svg" type="image/svg" class="width-height-22">
                     Programme
                 </div>
             </div>
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
+            <div class="mobile-bottom-nav-item">
+                <div class="mobile-bottom-nav-item-content">
                     <img src="../../assets/images/network-icon.svg" type="image/svg" [routerLink]="['/profile']" class="width-height-22">
                     Network
                 </div>		
             </div>
             
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
+            <div class="mobile-bottom-nav-item">
+                <div class="mobile-bottom-nav-item-content">
                     <img src="../../assets/images/message-icon.svg" type="image/svg" class="width-height-22">
                     Message
                 </div>		
             </div>
-          <button class="navbar-toggler" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button"  data-bs-toggle="modal" data-bs-target="#menuModal" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>

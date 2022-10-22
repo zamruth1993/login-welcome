@@ -1,7 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
 import { LoginUploadServiceService } from '../services/login-upload-service.service';
+import { loginResponse } from '../shared/interface/loginResponse';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent {
 
   login() {
     this.isLoading = true;
-    this.loginUpload.loginTest().subscribe(res => {
+    this.loginUpload.loginTest().subscribe((res: loginResponse) => {
       if (res) {
         this.isLoading = false;
         this.loginResponse = res;
@@ -25,7 +25,7 @@ export class LoginComponent {
         this.router.navigateByUrl('/welcome')
       } else {
         this.isLoading = false;
-        this.loginUpload.setAuthToken(null);
+        this.loginUpload.setAuthToken('');
       }
     })
   }

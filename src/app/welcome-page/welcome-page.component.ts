@@ -14,7 +14,7 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit(): void {
     // to susbcribe the value from the emitted observable from login-upload-service.ts
-    this.loginUpload.authToken.subscribe((res: any) => {
+    this.loginUpload.authToken.subscribe((res: string) => {
       // if value is present then loading is made false . Else redirected to login page
       if (res) {
         this.isLoading = false;

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { loginResponse } from '../shared/interface/loginResponse';
+import { profileResponse } from '../shared/interface/profileResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +18,7 @@ export class LoginUploadServiceService {
   private authSource = new BehaviorSubject('');
   authToken = this.authSource.asObservable()
 
-  setAuthToken(authToken: any) {
-    // if (name !== null || name !== '' || name !== undefined)
+  setAuthToken(authToken: string) {
       this.authSource.next(authToken);
   }
   // loginTest api to pass the details and get the response
@@ -27,7 +28,7 @@ export class LoginUploadServiceService {
       "password": "sample-password"
     }
     const url = 'https://api.occamlab.com.sg/demo-occamlab/login-test';
-    return this.http.post(url, bodyData)
+    return this.http.post<loginResponse>(url, bodyData)
   }
 
   // to upload the image with authToken as the authorization header
@@ -39,7 +40,7 @@ export class LoginUploadServiceService {
     }
     const formData = new FormData();
     formData.append("file", urlImage, urlImage.name);
-    return this.http.post(url, urlImage, { headers: header })
+    return this.http.post<profileResponse>(url, urlImage, { headers: header })
   }
 }
 

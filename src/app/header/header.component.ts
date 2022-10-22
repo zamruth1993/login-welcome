@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { LoginUploadServiceService } from '../services/login-upload-service.service';
@@ -8,14 +8,13 @@ import { LoginUploadServiceService } from '../services/login-upload-service.serv
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
-  headerSusc: Subject<any> | undefined;
-
+  subscription!: Subscription;
   constructor(private loginUpload: LoginUploadServiceService,private router: Router) { }
 
   ngOnInit(): void {
-   this.loginUpload.authToken.subscribe((res: any) => {
+    this.subscription = this.loginUpload.authToken.subscribe((res: string) => {
       if (res) {
         this.isLoading = false;
       } else {
@@ -25,7 +24,11 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.loginUpload.setAuthToken(null)
+    this.loginUpload.setAuthToken('')
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
 
 }
