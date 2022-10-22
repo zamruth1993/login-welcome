@@ -135,27 +135,6 @@ a {
     font-size: 33px !important;
 }
 
-line {
-    stroke: #071d49;
-    stroke-dasharray: 0;
-}
-
-/* DEMO STYLES */
-body {
-    background: #333;
-    display: grid;
-    place-items: center;
-    width: 100%;
-}
-
-svg {
-    height: 1px;
-    stroke-width: 0.5px;
-}
-
-.margin-bottom-0 {
-    margin-bottom: 0px;
-}
 
 @media screen and (max-width:767px) {
     .navbar-nav {
@@ -245,14 +224,6 @@ svg {
     }
 }
 
-body {
-    padding: 10px;
-    padding-bottom: 50px;
-}
-
-h1 {
-    margin-bottom: 2000px;
-}
 
 .width-height-22 {
     width: 22px;
@@ -265,15 +236,9 @@ h1 {
     left: 0;
     right: 0;
     z-index: 1000;
-
-    //give nav it's own compsite layer
-    will-change: transform;
     transform: translateZ(0);
-
     display: flex;
-
     height: 50px;
-
     box-shadow: 0 -2px 5px -2px #333;
     background-color: #fff;
 
